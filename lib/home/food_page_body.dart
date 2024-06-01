@@ -85,7 +85,96 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
             ],
           ),
-        )
+        ),
+
+        // ListView builder has no height and width
+        // We need to wrap this inside a Container()
+        // Removed the Container() after completing the design
+        // Because of that Container() the all items inside the ListView builder was not drawn
+        ListView.builder(
+            shrinkWrap: true,
+
+            // We are setting it to NeverScrollableScrollPhysics() because we already made whole widget
+            // as SingleChildScrollView() in main_food_page.dart
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.responsiveHeight(20),
+                    right: Dimensions.responsiveHeight(20),
+                    bottom: Dimensions.responsiveHeight(10)),
+                child: Row(
+                  children: [
+                    Container(
+                      // Image
+                      width: Dimensions.responsiveHeight(120),
+                      height: Dimensions.responsiveHeight(120),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            Dimensions.responsiveHeight(20)),
+                        color: Colors.white38,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/image/food0.png"),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      // Using Expanded() to stretch the Container() to the left
+                      child: Container(
+                        height: Dimensions.responsiveHeight(100),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(
+                                  Dimensions.responsiveHeight(20)),
+                              bottomRight: Radius.circular(
+                                Dimensions.responsiveHeight(20),
+                              )),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.responsiveHeight(10),
+                              right: Dimensions.responsiveHeight(10)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              BigText(text: "Nutritious fruit meal in China"),
+                              SizedBox(height: Dimensions.responsiveHeight(10)),
+                              SmallText(text: "With chinese characteristics"),
+                              SizedBox(height: Dimensions.responsiveHeight(10)),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    text: "Normal",
+                                    iconColor: AppColors.iconColor1,
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.location_on,
+                                    text: "1.7km",
+                                    iconColor: AppColors.mainColor,
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    text: "32min",
+                                    iconColor: AppColors.iconColor2,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
