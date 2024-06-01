@@ -21,7 +21,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   var _currPageValue = 0.0;
 
   double _scaleFactor = 0.8;
-  double _height = Dimensions.pageViewContainer;
+  double _height = Dimensions.responsiveHeight(220);
 
   @override
   void initState() {
@@ -46,7 +46,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         Container(
           // color: Colors.redAccent,
-          height: 320,
+          height: Dimensions.responsiveHeight(320),
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -113,7 +113,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       child: Stack(
         children: [
           Container(
-            height: Dimensions.pageViewContainer,
+            height: Dimensions.responsiveHeight(220),
             margin: EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -130,7 +130,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             // We want the Container() to be in the bottom
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: Dimensions.pageViewTextContainer,
+              // height: Dimensions.pageViewTextContainer,
+              height: Dimensions.responsiveHeight(120),
               margin: EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -151,14 +152,15 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ),
                   ]),
               child: Container(
-                padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.responsiveHeight(15),
+                    left: Dimensions.responsiveHeight(15),
+                    right: Dimensions.responsiveHeight(15)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: "Chinese Side"),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: Dimensions.responsiveHeight(10)),
                     Row(
                       children: [
                         Wrap(
@@ -167,19 +169,19 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             (index) => Icon(
                               Icons.star,
                               color: AppColors.mainColor,
-                              size: 15,
+                              size: Dimensions.responsiveHeight(15),
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: Dimensions.responsiveHeight(10)),
                         SmallText(text: "4.5"),
-                        SizedBox(width: 10),
+                        SizedBox(width: Dimensions.responsiveHeight(10)),
                         SmallText(text: "1287"),
-                        SizedBox(width: 10),
+                        SizedBox(width: Dimensions.responsiveHeight(10)),
                         SmallText(text: "comments")
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: Dimensions.responsiveHeight(20)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

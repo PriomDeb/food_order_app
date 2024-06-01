@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:food_order_app/utils/dimensions.dart';
 import 'package:food_order_app/widgets/small_text.dart';
 
 class IconAndTextWidget extends StatelessWidget {
@@ -18,7 +19,11 @@ class IconAndTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: iconColor),
+        Icon(
+          icon,
+          color: iconColor,
+          size: Dimensions.responsiveHeight(24),
+        ),
         SizedBox(width: 5),
         SmallText(text: text),
       ],
