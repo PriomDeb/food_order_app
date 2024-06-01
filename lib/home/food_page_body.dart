@@ -114,9 +114,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: Dimensions.responsiveHeight(220),
-            margin: EdgeInsets.only(left: 10, right: 10),
+            margin: EdgeInsets.only(
+                left: Dimensions.responsiveHeight(10),
+                right: Dimensions.responsiveHeight(10)),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius:
+                  BorderRadius.circular(Dimensions.responsiveHeight(30)),
               color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
               image: DecorationImage(
                 fit: BoxFit.cover,
@@ -132,9 +135,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             child: Container(
               // height: Dimensions.pageViewTextContainer,
               height: Dimensions.responsiveHeight(120),
-              margin: EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              margin: EdgeInsets.only(
+                  left: Dimensions.responsiveHeight(30),
+                  right: Dimensions.responsiveHeight(30),
+                  bottom: Dimensions.responsiveHeight(30)),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius:
+                      BorderRadius.circular(Dimensions.responsiveHeight(20)),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(

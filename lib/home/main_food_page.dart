@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_app/home/food_page_body.dart';
 import 'package:food_order_app/utils/colors.dart';
+import 'package:food_order_app/utils/dimensions.dart';
 import 'package:food_order_app/widgets/big_text.dart';
 import 'package:food_order_app/widgets/small_text.dart';
 
@@ -23,8 +24,12 @@ class _MainFoodPageState extends State<MainFoodPage> {
         children: [
           Container(
             child: Container(
-              margin: EdgeInsets.only(top: 45, bottom: 12),
-              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(
+                  top: Dimensions.responsiveHeight(45),
+                  bottom: Dimensions.responsiveHeight(12)),
+              padding: EdgeInsets.only(
+                  left: Dimensions.responsiveHeight(20),
+                  right: Dimensions.responsiveHeight(20)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -47,15 +52,17 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: Dimensions.responsiveHeight(45),
+                      height: Dimensions.responsiveHeight(45),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(
+                            Dimensions.responsiveHeight(12)),
                         color: AppColors.mainColor,
                       ),
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: Dimensions.responsiveHeight(24),
                       ),
                     ),
                   ),
