@@ -1,6 +1,6 @@
 # food_order_app
 
-A new Flutter project.
+Building a Food Ordering app in Flutter.
 
 ## Getting Started
 
