@@ -76,7 +76,7 @@ class PopularFoodDetail extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.responsiveHeight(120),
         padding: EdgeInsets.only(
             top: Dimensions.responsiveHeight(30),
             bottom: Dimensions.responsiveHeight(30),
