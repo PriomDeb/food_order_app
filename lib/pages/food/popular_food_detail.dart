@@ -61,10 +61,85 @@ class PopularFoodDetail extends StatelessWidget {
                     topLeft: Radius.circular(Dimensions.responsiveHeight(20))),
                 color: Colors.white,
               ),
-              child: AppColumn(text: "Chinese Side"),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppColumn(text: "Chinese Side"),
+                  SizedBox(
+                    height: Dimensions.responsiveHeight(20),
+                  ),
+                  BigText(text: "Introduce"),
+                ],
+              ),
             ),
-          )
+          ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(
+            top: Dimensions.responsiveHeight(30),
+            bottom: Dimensions.responsiveHeight(30),
+            left: Dimensions.responsiveHeight(20),
+            right: Dimensions.responsiveHeight(20)),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(Dimensions.responsiveHeight(40)),
+              topRight: Radius.circular(Dimensions.responsiveHeight(40))),
+          color: AppColors.buttonBackgroundColor,
+          // color: Colors.amber,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                  left: Dimensions.responsiveHeight(20),
+                  right: Dimensions.responsiveHeight(20),
+                  top: Dimensions.responsiveHeight(20),
+                  bottom: Dimensions.responsiveHeight(20)),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                    Radius.circular(Dimensions.responsiveHeight(20))),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // BigText(text: "-"),
+                  Icon(
+                    Icons.remove,
+                    color: AppColors.signColor,
+                  ),
+                  SizedBox(width: Dimensions.responsiveHeight(6)),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.responsiveHeight(6)),
+                  // BigText(text: "+"),
+                  Icon(
+                    Icons.add,
+                    color: AppColors.signColor,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                  left: Dimensions.responsiveHeight(20),
+                  right: Dimensions.responsiveHeight(20),
+                  top: Dimensions.responsiveHeight(20),
+                  bottom: Dimensions.responsiveHeight(20)),
+              decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.circular(Dimensions.responsiveHeight(20)),
+                color: AppColors.mainColor,
+              ),
+              child: BigText(
+                text: "\$0.08 Add to cart",
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
